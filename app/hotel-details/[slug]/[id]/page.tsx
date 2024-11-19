@@ -133,10 +133,16 @@ import ImageGallery from "@/components/ImageGallery"; // Adjust the path accordi
 import Header from "@/components/Header";
 import ShareAndSave from "@/components/ShareAndSave";
 import Navbar from "@/components/Navbar";
-import Listing from "@/components/Listing";
-import Below from "@/components/Below";
 import Below2 from "@/components/Below2";
-import PropertyDetails from "@/components/PropertyDetails";
+import PropertyDetailsPage from "@/components/PropertyDetailsPage";
+import BookingPolicies from "@/components/BookingPolicies";
+import RecentReviews from "@/components/RecentReviews";
+import HostAndMessage from "@/components/HostAndMessage";
+import FAQ from "@/components/FAQ";
+import AboutProperty from "@/components/AboutProperty";
+import SpacesSection from "@/components/SpacesSection";
+import Ameneties from "@/components/Ameneties";
+import { notFound } from "next/navigation";
 // import Listing from "@/components/Listing";
 
 // Define the type for a hotel
@@ -172,7 +178,7 @@ async function fetchHotelDetails(slug: string, id: string): Promise<Hotel | null
   const response = await fetch(`http://localhost:3001/api/hotel/${id}`);
 
   if (!response.ok) {
-    console.error(`Failed to fetch hotel: ${response.status}`);
+    // console.error(`Failed to fetch hotel: ${response.status}`);
     return null;
   }
 
@@ -189,7 +195,7 @@ const HotelDetailsPage = async ({
   const hotel = await fetchHotelDetails(slug, id);
 
   if (!hotel) {
-    return <div className="p-4">Hotel not found</div>;
+    notFound();
   }
 
   return (
@@ -205,7 +211,7 @@ const HotelDetailsPage = async ({
       </div>
 
       <Navbar/>
-
+{/* 
       <h1 className="text-3xl font-bold">{hotel.title}</h1>
       <p className="text-lg text-gray-700">{hotel.description}</p>
 
@@ -246,11 +252,16 @@ const HotelDetailsPage = async ({
             </p>
           </div>
         ))}
-      </div>
-      <Listing/>
-      <Below/>
+      </div> */}
       <Below2 hotel={hotel}/>
-      <PropertyDetails/>
+      <SpacesSection/>
+      <AboutProperty hotel={hotel}/>
+      <Ameneties/>
+      <PropertyDetailsPage/>
+      <BookingPolicies/>
+      <FAQ hotel={hotel}/>
+      <RecentReviews/>
+      <HostAndMessage hotel={hotel}/>
     </div>
   );
 };

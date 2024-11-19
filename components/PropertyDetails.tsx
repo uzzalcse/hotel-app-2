@@ -132,7 +132,7 @@
 // export default PropertyDetails;
 
 
-// code 2
+//code 2
 
 'use client'
 import React, { useState } from 'react';
@@ -272,3 +272,5 @@ const PropertyDetails: React.FC = () => {
 };
 
 export default PropertyDetails;
+
+

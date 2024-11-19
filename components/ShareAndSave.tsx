@@ -1,6 +1,8 @@
+
 "use client"; // Add this at the top for client-side rendering
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 const ShareAndSave: React.FC = () => {
   const [isLiked, setIsLiked] = useState(false);
@@ -28,11 +30,14 @@ const ShareAndSave: React.FC = () => {
 
   const handleCopyLink = () => {
     const currentUrl = window.location.href; // Get the current page URL
-    navigator.clipboard.writeText(currentUrl).then(() => {
-      alert("Link copied to clipboard!");
-    }).catch((err) => {
-      alert("Failed to copy link: " + err);
-    });
+    navigator.clipboard
+      .writeText(currentUrl)
+      .then(() => {
+        alert("Link copied to clipboard!");
+      })
+      .catch((err) => {
+        alert("Failed to copy link: " + err);
+      });
   };
 
   return (
@@ -46,12 +51,20 @@ const ShareAndSave: React.FC = () => {
 
       {/* Buttons */}
       <div className="flex gap-2">
-        {/* Share Button */}
+        {/* Share Button with Upload Icon */}
         <button
           className="flex items-center gap-2 px-4 py-2 text-sm border border-gray-300 rounded-full bg-white hover:bg-gray-100"
           onClick={handleShareClick}
         >
-          <i className="fas fa-share-alt text-blue-600"></i> Share
+          {/* Share Icon */}
+          <Image
+            src="/icons/share.svg"
+            alt="Share"
+            width={16}
+            height={16}
+            className="text-blue-600"
+          />
+          Share
         </button>
 
         {/* Save Button */}
@@ -72,25 +85,45 @@ const ShareAndSave: React.FC = () => {
           onClick={handleCloseSharePopup}
         >
           <div
-            className="bg-white p-6 rounded-lg shadow-lg w-4/5 max-w-sm"
+            className="bg-white p-6 rounded-lg shadow-lg w-4/5 max-w-sm relative"
             onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside modal
           >
+            {/* Close Button at top-left */}
             <button
-              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+              className="absolute top-3 left-3 text-gray-600 hover:text-gray-900 text-2xl"
               onClick={handleCloseSharePopup}
             >
               &times;
             </button>
             <h3 className="text-lg font-semibold mb-4">Share this property</h3>
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-3 gap-4 mb-4">
               {/* Social Media Icons */}
               <div className="flex flex-col items-center">
-                <i className="fab fa-facebook text-2xl text-blue-600"></i>
+                <Image
+                  src="/icons/facebook.svg"
+                  alt="Facebook"
+                  width={24}
+                  height={24}
+                />
                 <span className="text-sm">Facebook</span>
               </div>
               <div className="flex flex-col items-center">
-                <i className="fab fa-twitter text-2xl text-blue-400"></i>
+                <Image
+                  src="/icons/twitter.svg"
+                  alt="Twitter"
+                  width={24}
+                  height={24}
+                />
                 <span className="text-sm">Twitter</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <Image
+                  src="/icons/messenger.svg"
+                  alt="Messenger"
+                  width={24}
+                  height={24}
+                />
+                <span className="text-sm">Messenger</span>
               </div>
             </div>
             <button
