@@ -73,57 +73,10 @@ const HotelDetailsPage = async ({
     <div className="p-4">
       <Header/>
       <ShareAndSave/>
-
-
-      {/* Pass images dynamically to the ImageGallery component */}
       <div className="mt-4">
-        {/* <h2 className="text-xl font-semibold">Images:</h2> */}
-        <ImageGallery images={hotel.images} />
+      <ImageGallery images={hotel.images} />
       </div>
-
       <Navbar/>
-{/* 
-      <h1 className="text-3xl font-bold">{hotel.title}</h1>
-      <p className="text-lg text-gray-700">{hotel.description}</p>
-
-      <div className="mt-4">
-        <h2 className="text-xl font-semibold">Details:</h2>
-        <p>
-          <strong>Address:</strong> {hotel.address}
-        </p>
-        <p>
-          <strong>Host:</strong> {hotel.host.name} ({hotel.host.email})
-        </p>
-        <p>
-          <strong>Guest Count:</strong> {hotel.guestCount}
-        </p>
-        <p>
-          <strong>Bedrooms:</strong> {hotel.bedroomCount}
-        </p>
-        <p>
-          <strong>Bathrooms:</strong> {hotel.bathroomCount}
-        </p>
-        <p>
-          <strong>Amenities:</strong> {hotel.amenities.join(", ")}
-        </p>
-      </div>
-
-      <div className="mt-4">
-        <h2 className="text-xl font-semibold">Rooms:</h2>
-        {hotel.rooms.map((room) => (
-          <div key={room.roomSlug} className="border rounded-md p-2 bg-gray-50 mt-2">
-            <p>
-              <strong>Room Title:</strong> {room.roomTitle}
-            </p>
-            <p>
-              <strong>Room Slug:</strong> {room.roomSlug}
-            </p>
-            <p>
-              <strong>Bedroom Count:</strong> {room.bedroomCount}
-            </p>
-          </div>
-        ))}
-      </div> */}
       <Below2 hotel={hotel}/>
       <SpacesSection/>
       <AboutProperty hotel={hotel}/>
