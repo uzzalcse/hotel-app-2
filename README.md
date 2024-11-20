@@ -37,10 +37,10 @@ This project is a dynamic hotel listing web application built using Next.js App 
 │   ├── 📄 layout.tsx          
 │   ├── 📄 page.tsx            
 ├── 📁 components  
-│   ├── 📄 HotelCard.tsx       
-│   ├── 📄 Navbar.tsx          
-│   ├── 📄 Footer.tsx  
-    |-        // Footer component
+│   ├── 📄 AboutProperty.tsx       
+│   ├── 📄 Header.tsx          
+│   ├── 📄 Ameneties.tsx  
+    |-...        
 ├── 📁 styles  
 │   ├── 📄 globals.css         
 ├── 📁 public                  
