@@ -40,7 +40,7 @@ This project is a dynamic hotel listing web application built using Next.js App 
 │   ├── 📄 AboutProperty.tsx       
 │   ├── 📄 Header.tsx          
 │   ├── 📄 Ameneties.tsx  
-    |-...        
+    |...        
 ├── 📁 styles  
 │   ├── 📄 globals.css         
 ├── 📁 public                  
@@ -59,11 +59,12 @@ Node.js installed (v18+ recommended)
 Package manager: npm 
 
 
-### 1st go to the following link and run the follwing project first then proceed from the the installation
+### 1st go to the following link and download and  run the follwing project first then proceed from the the installation
 
 
 ```
-https://github.com/uzzalcse/W3-Assignment-3
+https://github.com/uzzalcse/hotel-management-api.git
+
 ```
 
 
@@ -81,11 +82,13 @@ cd hotel-app-2
 
 ```
 npm install
+
 ```
 #### 3. Run the development server:
 
 ```
 npm run dev
+
 ```
 
 #### 4. Open your browser and visit:
@@ -102,7 +105,7 @@ npm run lint: Run ESLint to analyze code for errors and enforce consistent style
 ### Key app features
 
 Layouts: Centralized layout configuration in app/layout.tsx for consistency across pages.  
-Dynamic Routes: Handles dynamic paths like /hotels/[hotelId] for rendering hotel-specific details.  
+Dynamic Routes: Handles dynamic paths like /hotel-details/[slug]/[hotelId] for rendering hotel-specific details.  
 Data Fetching: Supports Server Components and React Hooks for server-side and client-side data fetching.   
 Built-in SEO: Easily add metadata like titles and descriptions for every page.  
 
