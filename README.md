@@ -28,19 +28,20 @@ This project is a dynamic hotel listing web application built using Next.js App 
 ### Routing: Next.js App Router for dynamic and nested routing.
 
 ## Project Structure
-📁 hotel-app-2 
+📁 hotel-app-2  
 ├── 📁 app  
-│   ├── 📁 hotel-details
+│   ├── 📁 hotel-details  
 │   │   ├── 📁 [slug]/[hotelId]  
 │   │   │   ├── 📄 page.tsx    
-│   │   ├── 📄 page.tsx        
+│   │       
 │   ├── 📄 layout.tsx          
 │   ├── 📄 page.tsx            
 ├── 📁 components  
 │   ├── 📄 AboutProperty.tsx       
 │   ├── 📄 Header.tsx          
 │   ├── 📄 Ameneties.tsx  
-    |...        
+|   |...  
+|      
 ├── 📁 styles  
 │   ├── 📄 globals.css         
 ├── 📁 public                  
@@ -62,10 +63,8 @@ Package manager: npm
 ### 1st go to the following link and download and  run the follwing project first then proceed from the the installation
 
 
-```
 https://github.com/uzzalcse/hotel-management-api.git
 
-```
 
 
 ### Installation
